@@ -35,7 +35,7 @@ void setup() {
 void ultrasonic()
 {
   Serial.print(distance); 
-  Serial.println(" Object Alert");
+  Serial.println(" pothole Alert");
   digitalWrite(buzzer,HIGH);
   for (int i=distance; i>0; i--)
     delay(10);
@@ -46,7 +46,7 @@ void ultrasonic()
 void pothole_ultrasonic()
 {
   Serial.print(pothole_distance); 
-  Serial.println(" pothole Object Alert");
+  Serial.println(" Object Alert");
   digitalWrite(buzzer,HIGH);
   for (int i=pothole_distance; i>0; i--)
     delay(10);
@@ -96,9 +96,9 @@ void SendMessage()
 {
   mySerial.println("AT+CMGF=1");    //Sets the GSM Module in Text Mode
   delay(1000);  // Delay of 1000 milli seconds or 1 second
-  mySerial.println("AT+CMGS=\"+919902759513\"\r"); // Replace x with mobile number
+  mySerial.println("AT+CMGS=\"+919008791799\"\r"); // Replace x with mobile number
   delay(1000);
-  mySerial.println("There is an emergency !!!Please can you come fast!!!");// The SMS text you want to send
+  mySerial.println("There is an emergency !!");// The SMS text you want to send
   delay(100);
    mySerial.println((char)26);// ASCII code of CTRL+Z
   delay(1000);
@@ -125,7 +125,7 @@ void loop() {
     LDR();
     watersensor();
 
-   int val = digitalRead(inPin); 
+   int val = digitalRead(inPin);  // read input value
      if (val == LOW) {      
     //digitalWrite(ledPin, LOW); 
     SendMessage();
