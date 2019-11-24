@@ -5,3 +5,4 @@ water puddles through different beeping patterns. It senses the light intensity 
 These are accomplished by incorporating two ultrasonic sensors, a moisture sensor and a LDR sensor along with an Arduino Nano micro-controller. These
 are placed at specific positions of the cane for efficient guidance. Moreover, a GSM module is also added to the system so that the
 visually impaired person can send a message to the emergency contact number in case of distress.
+F:\html\0970.xml - Refer to paper
