@@ -2,8 +2,8 @@
 SoftwareSerial mySerial(11, 12);
 const int inPin = 7;
 const int trigPin = 8;//ULTRA
-const int echoPin = 10;
-const int buzzer = 9;
+const int echoPin = 9;
+const int buzzer = 10;
 const int pothole_trig = 5;
 const int pothole_echo = 6;
 long duration;
@@ -38,10 +38,10 @@ void ultrasonic()
   Serial.println(" pothole Alert");
   digitalWrite(buzzer,HIGH);
   for (int i=distance; i>0; i--)
-    delay(10);
+    delay(9);
   digitalWrite(buzzer,LOW);
   for (int i=distance; i>0; i--)
-    delay(10);
+    delay(9);
 }
 void pothole_ultrasonic()
 {
@@ -49,7 +49,7 @@ void pothole_ultrasonic()
   Serial.println(" Object Alert");
   digitalWrite(buzzer,HIGH);
   for (int i=pothole_distance; i>0; i--)
-    delay(10);
+    delay(9);
   digitalWrite(buzzer,LOW);
   for (int i=pothole_distance; i>0; i--)
     delay(10);
@@ -59,7 +59,7 @@ void checkdistance()
   digitalWrite(trigPin, LOW);
   delayMicroseconds(2);
   digitalWrite(trigPin, HIGH);
-  delayMicroseconds(10);
+  delayMicroseconds(9);
   digitalWrite(trigPin, LOW);
   duration = pulseIn(echoPin, HIGH);    
   distance= duration*0.034/2;
@@ -69,7 +69,7 @@ void checkpothole()
   digitalWrite(pothole_trig, LOW);
   delayMicroseconds(2);
   digitalWrite(pothole_trig, HIGH);
-  delayMicroseconds(10);
+  delayMicroseconds(9);
   digitalWrite(pothole_trig, LOW);
   pothole_duration = pulseIn(pothole_echo, HIGH);    
   pothole_distance= pothole_duration*0.034/2;
